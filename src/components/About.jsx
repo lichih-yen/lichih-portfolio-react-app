@@ -12,15 +12,17 @@ const About = () => {
         </div>
         <div className="max-w-[1000px] w-full grid sm:grid-cols-2 gap-8 px-4">
           <div className="sm:text-right text-4xl font-bold">
-            <p>Hi, nice to meet you.</p>
+            <p>
+              <span className="text-pink-700">Hi</span>, nice to meet you.
+            </p>
           </div>
           <div>
-            <p className="leading-8">
+            <p className="leading-8 text-gray-400">
               I'm specialized in quickly learning new skills, problem-solving, and working independently and
               collaboratively in a team. I've started learning Node.js, MongoDB, Express.js, and the Model View
               Controller (MVC) methods of organizing code. I now have JavaScript, React.js, HTML/CSS, Git/GitHub,
-              RESTful APIs, SQL, and Tailwindcss on my belt. I'm still enthusiastically looking into any other
-              frameworks or tech stacks I can polish up the coding skills in my head.
+              RESTful APIs, Sql, and Tailwind on my belt. I'm still enthusiastically looking into any other frameworks
+              or tech stacks I can polish up the coding skills in my head.
             </p>
           </div>
         </div>

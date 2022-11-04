@@ -63,12 +63,12 @@ const Skills = () => {
             <p className="my-4">GitHub</p>
           </div>
 
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-5--">
+          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
             <img className="w-20 mx-auto" src={Mongo} alt="Mongo icon" />
             <p className="my-4">MongoDB</p>
           </div>
 
-          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-5--">
+          <div className="shadow-md shadow-[#040c16] hover:scale-110 duration-500">
             <img className="w-20 mx-auto" src={Express} alt="Express icon" />
             <p className="my-4">Express.js</p>
           </div>

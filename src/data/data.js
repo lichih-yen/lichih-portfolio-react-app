@@ -10,7 +10,7 @@ export const data = [
     image: OneFreePizza,
     github: 'https://github.com/lichih-yen/One-Free-Pizza-Major-Project',
     live: 'https://lichih-yen.github.io/One-Free-Pizza-Major-Project',
-    stack: 'React | JavaScript | SCSS | RESTful API',
+    stack: 'React.js | JavaScript | SCSS | RESTful API',
   },
   {
     id: 2,
