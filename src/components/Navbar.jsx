@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import { FaBars, FaTimes, FaLinkedin, FaGithub } from 'react-icons/fa'
 import { HiOutlineMail } from 'react-icons/hi'
 import { BsFillPersonLinesFill } from 'react-icons/bs'
@@ -6,10 +6,25 @@ import { Link } from 'react-scroll'
 
 const Navbar = () => {
   const [menu, setMenu] = useState(false)
+  const [bgColor, setBgColor] = useState('transparent')
   const handleClick = () => setMenu(!menu)
 
+  useEffect(() => {
+    const changColor = () => {
+      if (window.scrollY > 90) {
+        setBgColor('black')
+      } else {
+        setBgColor('transparent')
+      }
+    }
+    window.addEventListener('scroll', changColor)
+  }, [])
+
   return (
-    <div className="fixed w-full h-[80px] flex justify-between items-center px-4 bg-[#0a192f] text-gray-300">
+    <div
+      style={{ background: `${bgColor}` }}
+      className="fixed w-full h-[60px] flex justify-between items-center px-4 bg-transparent text-gray-300 z-30 ease-in duration-300"
+    >
       <div>
         <h1 className="text-3xl font-burtons cursor-pointer">
           <Link to="home" smooth={true} duration={500}>
@@ -20,27 +35,27 @@ const Navbar = () => {
 
       {/* Menu */}
       <ul className="hidden md:flex">
-        <li>
+        <li className="hover:text-cyan-600 duration-500">
           <Link to="home" smooth={true} duration={500}>
             Home
           </Link>
         </li>
-        <li>
+        <li className="hover:text-cyan-600 duration-500">
           <Link to="about" smooth={true} duration={500}>
             About
           </Link>
         </li>
-        <li>
+        <li className="hover:text-cyan-600 duration-500">
           <Link to="skills" smooth={true} duration={500}>
             Skills
           </Link>
         </li>
-        <li>
+        <li className="hover:text-cyan-600 duration-500">
           <Link to="work" smooth={true} duration={500}>
             Work
           </Link>
         </li>
-        <li>
+        <li className="hover:text-cyan-600 duration-500">
           <Link to="contact" smooth={true} duration={700}>
             Contact
           </Link>
@@ -48,47 +63,46 @@ const Navbar = () => {
       </ul>
 
       {/* Hamburger */}
-      <div onClick={handleClick} className="md:hidden z-50">
+      <div onClick={handleClick} className="md:hidden z-30">
         {!menu ? <FaBars /> : <FaTimes />}
       </div>
+
       {/* Mobile Menu */}
-      <ul
+      <div
         className={
           !menu
-            ? 'hidden'
-            : 'absolute top-0 left-0 w-full h-screen bg-[#0a192f] z-20 flex flex-col justify-center items-center'
+            ? 'absolute top-0 left-[-100%] w-full h-screen bg-[#0a192f] z-20 flex flex-col justify-center items-center ease-in duration-300'
+            : 'absolute top-0 left-0 w-full h-screen bg-[#0a192f] z-20 flex flex-col justify-center items-center ease-in duration-300'
         }
       >
-        <li className="py-6 text-4xl">
-          {' '}
-          <Link onClick={handleClick} to="home" smooth={true} duration={500}>
-            Home
-          </Link>
-        </li>
-        <li className="py-6 text-4xl">
-          {' '}
-          <Link onClick={handleClick} to="about" smooth={true} duration={500}>
-            About
-          </Link>
-        </li>
-        <li className="py-6 text-4xl">
-          {' '}
-          <Link onClick={handleClick} to="skills" smooth={true} duration={500}>
-            Skills
-          </Link>
-        </li>
-        <li className="py-6 text-4xl">
-          <Link onClick={handleClick} to="work" smooth={true} duration={500}>
-            Work
-          </Link>
-        </li>
-        <li className="py-6 text-4xl">
-          {' '}
-          <Link onClick={handleClick} to="contact" smooth={true} duration={500}>
-            Contact
-          </Link>
-        </li>
-      </ul>
+        <ul>
+          <li className="py-6 text-4xl hover:text-cyan-600 duration-300">
+            <Link onClick={handleClick} to="home" smooth={true} duration={500}>
+              Home
+            </Link>
+          </li>
+          <li className="py-6 text-4xl hover:text-cyan-600 duration-300">
+            <Link onClick={handleClick} to="about" smooth={true} duration={500}>
+              About
+            </Link>
+          </li>
+          <li className="py-6 text-4xl hover:text-cyan-600 duration-300">
+            <Link onClick={handleClick} to="skills" smooth={true} duration={500}>
+              Skills
+            </Link>
+          </li>
+          <li className="py-6 text-4xl hover:text-cyan-600 duration-300">
+            <Link onClick={handleClick} to="work" smooth={true} duration={500}>
+              Work
+            </Link>
+          </li>
+          <li className="py-6 text-4xl hover:text-cyan-600 duration-300">
+            <Link onClick={handleClick} to="contact" smooth={true} duration={500}>
+              Contact
+            </Link>
+          </li>
+        </ul>
+      </div>
 
       {/*  Socila Icons */}
       <div className="hidden lg:flex fixed flex-col top-[35%] left-0">
@@ -98,6 +112,7 @@ const Navbar = () => {
               className="flex justify-between items-center w-full text-gray-300"
               href="https://www.linkedin.com/in/lichih-yen/"
               target="_blank"
+              rel="noreferrer"
             >
               LinkedIn
               <FaLinkedin size={30} />
@@ -109,6 +124,7 @@ const Navbar = () => {
               className="flex justify-between items-center w-full text-gray-300"
               href="https://github.com/lichih-yen"
               target="_blank"
+              rel="noreferrer"
             >
               GitHub
               <FaGithub size={30} />
@@ -120,6 +136,7 @@ const Navbar = () => {
               className="flex justify-between items-center w-full text-gray-300"
               href="mailto: lichih.yen@gmail.com"
               target="_blank"
+              rel="noreferrer"
             >
               Email
               <HiOutlineMail size={30} />
@@ -131,6 +148,7 @@ const Navbar = () => {
               className="flex justify-between items-center w-full text-gray-300"
               href="https://www.lichih-dev.com"
               target="_blank"
+              rel="noreferrer"
             >
               Website
               <BsFillPersonLinesFill size={30} />

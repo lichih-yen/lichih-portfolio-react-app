@@ -36,11 +36,4 @@ export const data = [
     live: 'https://github.com/Maksuda-E/Application-Project-Group-3',
     stack: 'React Native | Agile | JavaScript | Firebase | Expo Libraries',
   },
-  // {
-  //     id: 5,
-  //     name: "",
-  //     image: ,
-  //     github: "",
-  //     live: ""
-  // }
 ]

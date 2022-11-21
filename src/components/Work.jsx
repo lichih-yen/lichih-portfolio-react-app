@@ -6,10 +6,10 @@ const Work = () => {
   const project = data
 
   return (
-    <div name="work" className="w-full md:h-screen text-gray-300 bg-[#0a192f]">
+    <div name="work" className="w-full md:h-100vh text-gray-300 bg-[#0a192f]">
       <div className="max-w-[1024px] mx-auto p-4 flex flex-col justify-center w-full h-full">
         <div className="pt-16">
-          <p className="text-4xl font-bold inline border-b-4 text-gray-300 border-cyan-500">Work</p>
+          <p className="text-4xl font-bold inline border-b-4 text-gray-200 border-cyan-500">Work</p>
           <p className="py-4">// Check out some of my recent work</p>
         </div>
 
@@ -21,17 +21,17 @@ const Work = () => {
               key={index}
               style={{ backgroundImage: `url(${item.image})` }}
               className="shadow-lg shadow-[#040c16] group container rounded-md 
-              flex justify-center text-center items-center mx-auto z-auto content-div "
+              flex justify-center text-center items-center mx-auto content-div"
             >
               {/* Hover Effect for images */}
-              <div className="opacity-0 group-hover:opacity-75 duration-500">
+              <div className="opacity-0 group-hover:opacity-70 ease-linear duration-500">
                 <span className="text-2xl font-bold text-gray-300 tracking-wider ">{item.name}</span>
                 <div className="pt-8 text-center ">
                   {/* eslint-disable-next-line */}
                   <a href={item.github} target="_blank">
                     <button
-                      className="text-center rounded-lg px-4 py-3 m-2
-                       bg-cyan-500 text-gray-700 font-bold text-lg"
+                      className="text-center rounded-lg px-5 py-2 m-2
+                       bg-cyan-500 text-gray-700 font-bold text-lg hover:bg-cyan-300"
                     >
                       Code
                     </button>
@@ -39,8 +39,8 @@ const Work = () => {
                   {/* eslint-disable-next-line */}
                   <a href={item.live} target="_blank">
                     <button
-                      className="text-center rounded-lg px-4 py-3 m-2
-                       bg-cyan-500 text-gray-700 font-bold text-lg"
+                      className="text-center rounded-lg px-5 py-2 m-2
+                       bg-cyan-500 text-gray-700 font-bold text-lg hover:bg-cyan-300"
                     >
                       Demo
                     </button>
